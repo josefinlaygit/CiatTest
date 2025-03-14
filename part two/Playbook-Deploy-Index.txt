@@ -1,0 +1,19 @@
+- name: Deploy Beautiful Static Page on Server-3
+  hosts: server1
+  become: yes
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: latest
+
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Copy index.html
+      copy:
+        src: /home/ubuntu/index.html
+        dest: /var/www/html
