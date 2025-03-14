@@ -1,0 +1,4 @@
+**Changes**
+
+1. I changed  "cp -r src/* /tmp/build/" for cp -r src/ /tmp/build/ because is redudant to put -r with the "*" in the route.
+2. I Changed "scp  /tmp/build/ user@server:/var/www/HTML" for "scp  -r /tmp/build/ user@server:/var/www/HTML" because you copy files not directories. So you need to copy the files recursively.
